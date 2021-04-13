@@ -56,12 +56,11 @@ public class Car {
     public void setId(Long id) {
         this.id = id;
     }
+
     @Override
     public String toString() {
         return "Car{" +
-                "user=" + user +
-                ", id=" + id +
-                ", model='" + model + '\'' +
+                "model='" + model + '\'' +
                 ", series=" + series +
                 '}';
     }

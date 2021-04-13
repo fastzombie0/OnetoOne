@@ -1,6 +1,7 @@
 package hiber;
 
 import hiber.config.AppConfig;
+import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -13,6 +14,7 @@ import java.util.Scanner;
 
 public class MainApp {
    public static void main(String[] args) throws SQLException {
+
       AnnotationConfigApplicationContext context =
             new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -23,8 +25,8 @@ public class MainApp {
       userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
       userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
       userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
-      userService.add(new User("User5", "Lastname5", "user5@mail.ru", "bmw", 911));
-      userService.add(new User("User6", "Lastname6", "user6@mail.ru", "mers", 922));
+      userService.add(new User("User5", "Lastname5", "user5@mail.ru", new Car("BMW", 911)));
+      userService.add(new User("User6", "Lastname6", "user6@mail.ru", new Car("MERS", 555)));
 
       List<User> users = userService.listUsers();
       for (User user : users) {
