@@ -30,12 +30,9 @@ public class Test {
         public static void main(String[] args) {
 
             List<Integer> integerList = Arrays.asList(1, 2, 3);
-            Gen gen = new Gen();
+            Gen<Integer> gen = new Gen<>();
             gen.m(integerList);
         }
-
-
-
 
         static class Gen<T> {
             <T> void m(Collection<T> collection) {
